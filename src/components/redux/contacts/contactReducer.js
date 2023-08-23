@@ -2,12 +2,12 @@ import { contactsInitialState } from './initialState';
 import { CONTACT_CREATE, CONTACT_DELETE } from './types';
 
 export const contactReducer = (state = contactsInitialState, action) => {
-  switch (action) {
+  switch (action.type) {
     case CONTACT_CREATE:
-      return { ...state, contacts: [...state, { ...action.payload }] };
+      return [...state, { ...action.payload }];
 
     case CONTACT_DELETE:
-      break;
+      return [...action.payload];
 
     default:
       return state;

@@ -1,6 +1,5 @@
 import { contactsInitialState } from './contacts/initialState';
-
-const filterInitialState = '';
+import { filterInitialState } from './filters/initialState';
 
 export const initialState = {
   contacts: contactsInitialState,

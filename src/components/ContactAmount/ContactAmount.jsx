@@ -1,13 +1,14 @@
-import PropTypes from 'prop-types';
-
 import { TotalContactsText, TotalContactsNum } from './ContactAmount.styled';
+import { useSelector } from 'react-redux';
 
-export default function ContactAmount({ contactsAmount }) {
+export default function ContactAmount() {
+  const contacts = useSelector(state => state.contacts);
+
+  const contactsAmount = contacts.length;
+
   return (
     <TotalContactsText>
       Contacts amount: <TotalContactsNum>{contactsAmount}</TotalContactsNum>
     </TotalContactsText>
   );
 }
-
-ContactAmount.propTypes = { contactsAmount: PropTypes.number.isRequired };
