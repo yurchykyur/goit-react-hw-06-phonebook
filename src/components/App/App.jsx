@@ -6,8 +6,6 @@ import Filter from 'components/Filter';
 import ContactAmount from 'components/ContactAmount';
 import Notification from 'components/Notification';
 
-// import { useLocalStorage } from 'ServiceLocalStorage/serviceLocalStorage';
-
 import { AppContainer, MainTitle, SecondTitle } from './App.styled';
 import { useSelector } from 'react-redux';
 

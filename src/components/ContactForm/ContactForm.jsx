@@ -1,7 +1,7 @@
-import React from 'react';
-import { nanoid } from 'nanoid';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { useLocalStorage } from 'ServiceLocalStorage/serviceLocalStorage';
+import { nanoid } from 'nanoid';
 
 import {
   FormWrapper,
@@ -10,12 +10,12 @@ import {
   FormInput,
   FormSubmitBtn,
 } from './ContactForm.styled';
-import { useDispatch, useSelector } from 'react-redux';
-import { createContact } from 'components/redux/contacts/actions';
+
+import { createContact } from 'components/redux/contacts/contactSlice';
 
 export default function ContactForm() {
-  const [name, setName] = useLocalStorage('name', '');
-  const [number, setNumber] = useLocalStorage('number', '');
+  const [name, setName] = useState('');
+  const [number, setNumber] = useState('');
   const contacts = useSelector(state => state.contacts);
   const dispatch = useDispatch();
 

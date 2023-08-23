@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from 'nanoid';
 
 import { FilterWrapper, FilterInputLabel, FilterInput } from './Filter.styled';
-import { filterContact } from 'components/redux/filters/actions';
+import { filterContact } from 'components/redux/filters/filterSlice';
 
 export default function Filter() {
   const filter = useSelector(state => state.filter);
