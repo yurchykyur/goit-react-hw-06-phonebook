@@ -1,4 +1,4 @@
-import { CONTACT_CREATE, CONTACT_DELETE } from './types';
+import { createAction } from '@reduxjs/toolkit';
 
-export const createContact = obj => ({ type: CONTACT_CREATE, payload: obj });
-export const deleteContact = arr => ({ type: CONTACT_DELETE, payload: arr });
+export const createContact = createAction('CONTACT_CREATE');
+export const deleteContact = createAction('CONTACT_DELETE');
